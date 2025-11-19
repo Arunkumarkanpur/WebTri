@@ -70,11 +70,11 @@ const SignUpPage = () => {
 					
 					{/* <XSvg className='w-24 lg:hidden fill-white' /> */}
 					<h1 className='text-4xl font-extrabold text-sky-400'>Join today.</h1>
-					<label className='input input-bordered rounded flex items-center gap-2'>
+					<label className='input input-bordered rounded flex items-center gap-2 text-white'>
 						<MdOutlineMail />
 						<input
 							type='email'
-							className='grow'
+							className='grow bg-black p-2'
 							placeholder='Email'
 							name='email'
 							onChange={handleInputChange}
@@ -82,22 +82,22 @@ const SignUpPage = () => {
 						/>
 					</label>
 					<div className='flex gap-4 flex-wrap'>
-						<label className='input input-bordered rounded flex items-center gap-2 flex-1'>
+						<label className='input input-bordered rounded flex items-center gap-2 flex-1 text-white'>
 							<FaUser />
 							<input
 								type='text'
-								className='grow '
+								className='grow bg-black p-2'
 								placeholder='Username'
 								name='username'
 								onChange={handleInputChange}
 								value={formData.username}
 							/>
 						</label>
-						<label className='input input-bordered rounded flex items-center gap-2 flex-1'>
+						<label className='input input-bordered rounded flex items-center gap-2 flex-1 text-white'>
 							<MdDriveFileRenameOutline />
 							<input
 								type='text'
-								className='grow'
+								className='grow bg-black p-2'
 								placeholder='Full Name'
 								name='fullName'
 								onChange={handleInputChange}
@@ -105,18 +105,18 @@ const SignUpPage = () => {
 							/>
 						</label>
 					</div>
-					<label className='input input-bordered rounded flex items-center gap-2'>
+					<label className='input input-bordered rounded flex items-center gap-2 text-white'>
 						<MdPassword />
 						<input
 							type='password'
-							className='grow'
+							className='grow bg-black p-2'
 							placeholder='Password'
 							name='password'
 							onChange={handleInputChange}
 							value={formData.password}
 						/>
 					</label>
-					<button className='btn rounded-full hover:bg-green-600 bg-green-500 text-white'>
+					<button className='btn rounded-full hover:bg-green-600 bg-green-500 p-1 text-white'>
 						{isPending ? "Loading..." : "Sign up"}
 					</button>
 					{isError && <p className='text-red-500'>{error.message}</p>}
@@ -124,7 +124,7 @@ const SignUpPage = () => {
 				<div className='flex flex-col lg:w-2/3 gap-2 mt-4'>
 					<p className='text-white text-lg'>Already have an account?</p>
 					<Link to='/login'>
-						<button className='btn rounded-full hover:bg-sky-500 text-white btn-outline w-full'>Sign in</button>
+						<button className='btn rounded-full hover:bg-sky-500 p-1 text-white btn-outline w-full'>Sign in</button>
 					</Link>
 				</div>
 			</div>

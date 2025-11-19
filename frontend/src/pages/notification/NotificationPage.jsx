@@ -50,14 +50,14 @@ const NotificationPage = () => {
 		<>
 			<div className='flex-[4_4_0] border-l border-r border-gray-700 min-h-screen'>
 				<div className='flex justify-between items-center p-4 border-b border-gray-700'>
-					<p className='font-bold'>Notifications</p>
-					<div className='dropdown '>
+					<p className='font-bold text-white'>Notifications</p>
+					<div className='dropdown text-white'>
 						<div tabIndex={0} role='button' className='m-1'>
 							<IoSettingsOutline className='w-4' />
 						</div>
 						<ul
 							tabIndex={0}
-							className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52'
+							className='dropdown-content z-[1] menu p-2 shadow bg-gray-600 rounded-md rounded-box w-52 text-white hover:bg-gray-800'
 						>
 							<li>
 								<a onClick={deleteNotifications}>Delete all notifications</a>
@@ -70,11 +70,11 @@ const NotificationPage = () => {
 						<LoadingSpinner size='lg' />
 					</div>
 				)}
-				{notifications?.length === 0 && <div className='text-center p-4 font-bold'>No notifications 🤔</div>}
+				{notifications?.length === 0 && <div className='text-center p-4 font-bold text-white'>No notifications 🤔</div>}
 				{notifications?.map((notification) => (
-					<div className='border-b border-gray-700' key={notification._id}>
-						<div className='flex gap-2 p-4'>
-							{notification.type === "follow" && <FaUser className='w-7 h-7 text-primary' />}
+					<div className='border-b border-gray-700 text-white' key={notification._id}>
+						<div className='flex gap-2 p-4 text-white'>
+							{notification.type === "follow" && <FaUser className='w-7 h-7 text-primary text-white' />}
 							{notification.type === "like" && <FaHeart className='w-7 h-7 text-red-500' />}
 							<Link to={`/profile/${notification.from.username}`}>
 								<div className='avatar'>

@@ -57,11 +57,11 @@ const queryClient = useQueryClient();
 				<form className='flex gap-4 flex-col' onSubmit={handleSubmit}>
 					{/* <XSvg className='w-24 lg:hidden fill-white' /> */}
 					<h1 className='text-4xl font-extrabold text-sky-400'>{"Let's"} go.</h1>
-					<label className='input input-bordered rounded flex items-center gap-2'>
+					<label className='input input-bordered rounded flex items-center gap-2 text-white'>
 						<MdOutlineMail />
 						<input
 							type='text'
-							className='grow'
+							className='grow rounded-md bg-black p-2'
 							placeholder='username'
 							name='username'
 							onChange={handleInputChange}
@@ -69,18 +69,18 @@ const queryClient = useQueryClient();
 						/>
 					</label>
 
-					<label className='input input-bordered rounded flex items-center gap-2'>
+					<label className='input input-bordered rounded flex items-center gap-2 text-white'>
 						<MdPassword />
 						<input
 							type='password'
-							className='grow'
+							className='grow rounded-md bg-black p-2'
 							placeholder='Password'
 							name='password'
 							onChange={handleInputChange}
 							value={formData.password}
 						/>
 					</label>
-					<button className='btn rounded-full hover:bg-green-600 bg-green-500 text-white'>
+					<button className='btn rounded-full hover:bg-green-600 bg-green-500 text-white p-1 font-semibold'>
 						{isPending ? "Loading..." : "Login"}
 					</button>
 					{isError && <p className='text-red-500'>{error.message}</p>}
@@ -88,7 +88,7 @@ const queryClient = useQueryClient();
 				<div className='flex flex-col gap-2 mt-4'>
 					<p className='text-white text-lg'>{"Don't"} have an account?</p>
 					<Link to='/signup'>
-						<button className='btn rounded-full hover:bg-sky-500 text-white btn-outline w-full'>Sign up</button>
+						<button className='btn rounded-full hover:bg-sky-500 text-white btn-outline w-full p-1'>Sign up</button>
 					</Link>
 				</div>
 			</div>
